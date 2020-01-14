@@ -1,0 +1,3 @@
+[submodule "GCHPctm"]
+	path = GCHPctm
+	url = git@github.com:geoschem/GCHPctm.git
