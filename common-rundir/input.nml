@@ -1,0 +1,10 @@
+&fms_nml 
+print_memory_usage = .false., 
+domains_stack_size = 20000000/
+
+&fv_core_nml
+! do_schmidt =,
+! stretch_fac =,
+! target_lat =,
+! target_lon =
+/
