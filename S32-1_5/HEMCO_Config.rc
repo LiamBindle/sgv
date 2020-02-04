@@ -193,6 +193,9 @@ Warnings:                    1
 
 (((EMISSIONS
 
+0 PASV1_Flux /my-projects/sgv/aeic_diagnostic/diagnostic-emissions/gen-1/diagnostic_coastline_emission.nc EmisPASV1  2005/1-12/1/0 C xy kg/m2/s PASV1  - 163 1
+0 PASV2_Flux /my-projects/sgv/aeic_diagnostic/diagnostic-emissions/gen-1/diagnostic_coastline_emission.nc EmisPASV2  2005/1-12/1/0 C xyz kg/m2/s PASV2  - 163 1
+
 #==============================================================================
 # --- APEI (Canada) ---
 #==============================================================================

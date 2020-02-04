@@ -194,6 +194,14 @@ Species name            : MENO3
 Species name            : ETNO3
 Species name            : IPRNO3
 Species name            : NPRNO3
+Species name            : PASV1
+Species name            : PASV2
+Species name            : PASV3
+------------------------+------------------------------------------------------
+%%% PASSIVE SPECIES MENU %%%:
+Passive species #1      : PASV1 50.0  3600.0   1.0e-12 Passive_Species_1
+Passive species #2      : PASV2 250.0 328320.0 1.0e-09 Passive_Species_2
+Passive species #3      : PASV3 250.0 -1       1.0e-09 Passive_Species_3
 ------------------------+------------------------------------------------------
 %%% TRANSPORT MENU %%%  :
 Turn on Transport       : T

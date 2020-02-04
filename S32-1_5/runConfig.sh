@@ -213,14 +213,14 @@ Checkpoint_Freq="000000"
 #
 # WARNING: these settings will override manual updates you make to input.geos!
 #
-Turn_on_Chemistry=T
+Turn_on_Chemistry=F
 Turn_on_emissions=T
-Turn_on_Dry_Deposition=T
-Turn_on_Wet_Deposition=T
-Turn_on_Transport=T
-Turn_on_Cloud_Conv=T
-Turn_on_PBL_Mixing=T
-Turn_on_Non_Local_Mixing=T
+Turn_on_Dry_Deposition=F
+Turn_on_Wet_Deposition=F
+Turn_on_Transport=F
+Turn_on_Cloud_Conv=F
+Turn_on_PBL_Mixing=F
+Turn_on_Non_Local_Mixing=F
 
 #------------------------------------------------
 #    Timesteps

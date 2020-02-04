@@ -49,39 +49,39 @@ devaod = os.path.join(devdir, gchp_aodfile)
 refrst = os.path.join(refdir, gchp_rstfile)
 devrst = os.path.join(devdir, gchp_rstfile)
 
-if plot_rst:
-    # Concentration plots
-    # (includes lumped species and separates by category)
-    print('\n%%% Creating GCHP vs. GCHP restart file plots %%%')
-    bmk.make_benchmark_conc_plots(refrst,
-                                  refstr,
-                                  devrst,
-                                  devstr,
-                                  dst=plotsdir,
-                                  subdst='restart_file_comparison',
-                                  overwrite=True,
-                                  use_cmap_RdBu=False,
-                                  is_restart_file=True,
-                                  cmpres=cmpres,
-                                  dev_sg_params=dev_sg_params,
-                                  x_extent=roi_x,
-                                  y_extent=roi_y)
+# if plot_rst:
+#     # Concentration plots
+#     # (includes lumped species and separates by category)
+#     print('\n%%% Creating GCHP vs. GCHP restart file plots %%%')
+#     bmk.make_benchmark_conc_plots(refrst,
+#                                   refstr,
+#                                   devrst,
+#                                   devstr,
+#                                   dst=plotsdir,
+#                                   subdst='restart_file_comparison',
+#                                   overwrite=True,
+#                                   use_cmap_RdBu=False,
+#                                   is_restart_file=True,
+#                                   cmpres=cmpres,
+#                                   dev_sg_params=dev_sg_params,
+#                                   x_extent=roi_x,
+#                                   y_extent=roi_y)
 
-if plot_conc:
-    # Concentration plots
-    # (includes lumped species and separates by category)
-    print('\n%%% Creating GCHP vs. GCHP concentration plots %%%')
-    bmk.make_benchmark_conc_plots(refspc,
-                                  refstr,
-                                  devspc,
-                                  devstr,
-                                  dst=plotsdir,
-                                  overwrite=True,
-                                  use_cmap_RdBu=False,
-                                  cmpres=cmpres,
-                                  dev_sg_params=dev_sg_params,
-                                  x_extent=roi_x,
-                                  y_extent=roi_y)
+# if plot_conc:
+#     # Concentration plots
+#     # (includes lumped species and separates by category)
+#     print('\n%%% Creating GCHP vs. GCHP concentration plots %%%')
+#     bmk.make_benchmark_conc_plots(refspc,
+#                                   refstr,
+#                                   devspc,
+#                                   devstr,
+#                                   dst=plotsdir,
+#                                   overwrite=True,
+#                                   use_cmap_RdBu=False,
+#                                   cmpres=cmpres,
+#                                   dev_sg_params=dev_sg_params,
+#                                   x_extent=roi_x,
+#                                   y_extent=roi_y)
 
 if plot_emis:
     # Emissions plots
@@ -101,30 +101,30 @@ if plot_emis:
                                   x_extent=roi_x,
                                   y_extent=roi_y)
 
-if plot_jvalues:
-    # Local noon J-values plots
-    print('\n%%% Creating GCHP vs. GCHP J-value plots %%%')
-    bmk.make_benchmark_jvalue_plots(refjv,
-                                    refstr,
-                                    devjv,
-                                    devstr,
-                                    dst=plotsdir,
-                                    overwrite=True,
-                                    cmpres=cmpres,
-                                    dev_sg_params=dev_sg_params,
-                                    x_extent=roi_x,
-                                    y_extent=roi_y,)
+# if plot_jvalues:
+#     # Local noon J-values plots
+#     print('\n%%% Creating GCHP vs. GCHP J-value plots %%%')
+#     bmk.make_benchmark_jvalue_plots(refjv,
+#                                     refstr,
+#                                     devjv,
+#                                     devstr,
+#                                     dst=plotsdir,
+#                                     overwrite=True,
+#                                     cmpres=cmpres,
+#                                     dev_sg_params=dev_sg_params,
+#                                     x_extent=roi_x,
+#                                     y_extent=roi_y,)
 
-if plot_aod:
-    # Column AOD plots
-    print('\n%%% Creating GCHP vs. GCHP column AOD plots %%%')
-    bmk.make_benchmark_aod_plots(refaod,
-                                 refstr,
-                                 devaod,
-                                 devstr,
-                                 dst=plotsdir,
-                                 overwrite=True,
-                                 cmpres=cmpres,
-                                 dev_sg_params=dev_sg_params,
-                                 x_extent=roi_x,
-                                 y_extent=roi_y)
+# if plot_aod:
+#     # Column AOD plots
+#     print('\n%%% Creating GCHP vs. GCHP column AOD plots %%%')
+#     bmk.make_benchmark_aod_plots(refaod,
+#                                  refstr,
+#                                  devaod,
+#                                  devstr,
+#                                  dst=plotsdir,
+#                                  overwrite=True,
+#                                  cmpres=cmpres,
+#                                  dev_sg_params=dev_sg_params,
+#                                  x_extent=roi_x,
+#                                  y_extent=roi_y)
