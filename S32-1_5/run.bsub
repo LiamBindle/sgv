@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#BSUB -q general
+#BSUB -n 96
+#BSUB -W 24:00
+#BSUB -R "rusage[mem=300000] span[ptile=32]"
+#BSUB -a 'docker(registry.gsc.wustl.edu/sleong/base-engineering-gcc)'
+#BSUB -J "SGV run"
+#BSUB -g /$USER/benchmarking
+#BSUB -N
+#BSUB -u liam.bindle@wustl.edu
+#BSUB -o lsf-run-%J-output.txt
+
+# Source bashrc
+. /etc/bashrc
+
+# Set up runtime environment
+set -x                           # Print executed commands
+set -e                           # Exit immediately if a command fails
+ulimit -c 0                      # coredumpsize
+ulimit -l unlimited              # memorylocked
+ulimit -u 50000                  # maxproc
+ulimit -v unlimited              # vmemoryuse
+ulimit -s unlimited              # stacksize
+
+# Execute simulation
+cd COMPUTE_NODE_RUNDIR
+rm -f cap_restart
+rm -f OutputDir/*
+./runConfig.sh
+mpirun --mca pml ucx \
+    --mca oob_tcp_if_include ib0 \
+    --mca btl_tcp_if_include ib0 \
+    -x UCX_NET_DEVICES=mlx5_0:1 \
+    -x UCX_TLS=rc,shm \
+    -x NCCL_SOCKET_IFNAME=ib0 \
+    -x LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH \
+    --bind-to none \
+    -x NCCL_DEBUG=INFO \
+    --mca plm_base_verbose 100 \
+    --map-by slot \
+    -mca orte_base_help_aggregate 0 \
+    -np 96 ./geos
