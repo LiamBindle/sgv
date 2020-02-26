@@ -1,13 +1,16 @@
 set -e 
 set -x
 
-CS_RES=48
+NUM_CORES=240
+NUM_NODES=10
+CORES_PER_NODE=24
+CS_RES=90
 STRETCH_FACTOR=1.0
 TARGET_LAT=
 TARGET_LON=
 RESTART_FILE=initial_restart_file.nc
 
-CONTROL_RUNDIR='/my-projects/...djskahjkdsahjkdsahk'
+CONTROL_RUNDIR='/my-projects/sgv/line-4/C90'
 
 # Fix cd command in bsub file (compute-node view)
 CWD=/my-projects/$(realpath --relative-to ~/my-projects/ $(pwd))
@@ -21,7 +24,12 @@ sed -i "s/CS_RES/${CS_RES}/g"                   regrid_restart.bsub
 
 # Running
 sed -i "s#cd COMPUTE_NODE_RUNDIR#cd ${CWD}#g" run.bsub
+sed -i "s#CORES_PER_NODE#${CORES_PER_NODE}#g" run.bsub
+sed -i "s#NUM_CORES#${NUM_CORES}#g" run.bsub
 
+sed -i "s#REPLACE_CORES_PER_NODE#${CORES_PER_NODE}#g" runConfig.sh
+sed -i "s#REPLACE_NUM_CORES#${NUM_CORES}#g" runConfig.sh
+sed -i "s#REPLACE_NUM_NODES#${NUM_NODES}#g" runConfig.sh
 sed -i "s#^.*CS_RES\s*=\s*[a-zA-Z0-9\.\-\/_]*#CS_RES=${CS_RES}#g" runConfig.sh
 sed -i "s#^.*INITIAL_RESTART\s*=\s*[a-zA-Z0-9\.\-\/_]*#INITIAL_RESTART=${RESTART_FILE}#g" runConfig.sh
 sed -i "s/^.*STRETCH_FACTOR\s*=\s*[0-9\.\-]*/STRETCH_FACTOR=${STRETCH_FACTOR}/g" runConfig.sh

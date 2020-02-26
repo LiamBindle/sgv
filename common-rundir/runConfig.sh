@@ -13,9 +13,9 @@
 # Total cores must be divisible by 6. Cores per node must equal number
 # of cores divided by number of nodes. Make sure you have these
 # resources available.
-TOTAL_CORES=96
-NUM_NODES=3
-NUM_CORES_PER_NODE=32
+TOTAL_CORES=REPLACE_NUM_CORES
+NUM_NODES=REPLACE_NUM_NODES
+NUM_CORES_PER_NODE=REPLACE_CORES_PER_NODE
 
 # Cores are distributed across each of the six cubed sphere faces using
 # configurable parameters NX and NY. Each face is divided into NX by NY/6
